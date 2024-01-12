@@ -68,10 +68,13 @@ Example:
 - `onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])` should return `'mockIng99, J0eyPunch and 1 more online'`.
 */
 console.log("Online status")
-// const onlineStatus = (arr) => {
-//     numUsuarios = arr.length
-//     return arr.length - 2;
-// }
+const users = ['mockIng99', 'J0eyPunch', 'glassedFer','glassDoor'];
+function arrayLength(array){return array.length;}
+function onlineStatus(array){
+    const total = arrayLength(array);
+    console.log(`Users: ${array[0]}, ${array[1]} and ${array.length-2} more are online`)
+} 
+onlineStatus(users);
 // console.log(onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer']));
 console.log("")
 /*
@@ -81,16 +84,18 @@ Examples:
 - `arrayMultiplos(2, 10)` should return `[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]`.
 - `arrayMultiplos(17, 6)` should return `[17, 34, 51, 68, 85, 102]`.
  */
-console.log("Array of Multiples")
-function arrayMultiplos(number, length){
-    
-    for(let i=0; i<=length-1; i++){
-        let array = [];
-        j = (i+1)*number
-        array.push(j);
-        console.log(j);
+console.log("Array of Multiples");
+function arrayMultiplos(number,length){
+let array = [];
+let nuevoArray = [];   
+    for(let i=1; i<=length; i++){
+        array.push(i);
+        arr = i*number;
+        nuevoArray.push(arr)
     }
-}
+    console.log(nuevoArray)}
+arrayMultiplos(2,10)
+arrayMultiplos(17,6)
 //const resultado = arrayMultiplos(2, 10);
 //console.log(resultado);
 console.log("")
