@@ -7,19 +7,14 @@ Examples:
 Note: This approach uses the absolute value of each resistance to ensure all values are positive.
 */
 console.log("Sum of Resistors in Series");
-let a = 5;
-let b = -4;
-let c = 8;
-let d = -7;
-let e = 2;
-let resistance = [a, b, c, d, e];
-console.log(resistance);
-let sumaResis = 0;
-for (let count = 0; count<=resistance.length-1; count++){
-     sumaResis += Math.abs(resistance[count])
-}
- console.log("la suma es: " + sumaResis);
- console.log("")
+function sumResitance(array){let sumaResis = 0;
+    for (let count = 0; count<=array.length-1; count++){
+         sumaResis += Math.abs(array[count])} 
+    console.log("la suma es: " + sumaResis);}
+ sumResitance([-1,5,6,3]);
+ sumResitance([14,3.5,6]);
+ sumResitance([8,15,100]);
+ console.log("");
 /*
 Number divided into halves
 Given a number, return the number divided into its halves in an array.
@@ -30,19 +25,16 @@ Note: The original example for `numDiv(10)` appears to be incorrect.
 */
 console.log("Number divided into halves");
 let numero = 5;
-console.log(numero)
-let mitad = numero/2;
-mitades = [];
-mitades.push(mitad,mitad);
-console.log(mitades);
-console.log("")
-//function reySalomonArray(numero){
-//     console.log(mitad);
-//     for (let i = 0; i == 1; i++){
-//         mitades = mitades.push(i);
-//     }console.log(mitades);
-//} 
-//reySalomonArray(8)
+//console.log(numero)
+function numDiv(numero){
+    let mitad = numero/2;
+    mitades = [];
+    mitades.push(mitad,mitad);
+    console.log(mitades);
+}
+numDiv(4);
+numDiv(10);
+console.log("");
 /*
 
 Secret Society
@@ -53,13 +45,16 @@ Examples:
 - `secretName(['Harry', 'Ron', 'Hermione'])` should return `'HRH'`.
 */
 console.log("Secret Society");
-let secretName=['Phoebe', 'Ross', 'Chandler', 'Joey', 'Monica', 'Rachel'];
-console.log(secretName);
-let secretSociety = ""
-for (let i = 0; i <= secretName.length-1; i++){
-    secretSociety += secretName[i][0];   
+function secretName(societyNames){
+    let secretSociety = ""
+    for (let i = 0; i <= societyNames.length-1; i++){
+        secretSociety += societyNames[i][0];
+    }
+    console.log(secretSociety)
 }
-console.log(secretSociety)
+secretName(["Esperanza", "Franco", "Nia"]);
+secretName(["Phoebe", "Ross", "Chandler", "Joey", "Monica", "Rachel"]);
+secretName(['Harry', 'Ron', 'Hermione']);
 console.log("")
 /*
 Online status
@@ -126,10 +121,28 @@ console.log("");
 /*
 Antipodal Average
 Given an array, return a shorter array following these steps:
-- Split the array into two equal parts*. If unequal, remove the middle element to obtain two equal arrays.
+- Split the array into two equal parts*. If unequal, remove the middle element 
+to obtain two equal arrays.
 - Sum each number of the first part with the inverse numbers of the second part.
 - Divide each number of the resulting array by 2.
 Example:
 - For the array `[1,2,3,5,22,6]`, the result should be `[3.5, 12, 4]`.
 */
 console.log("Antipodal Average");
+//function splitArray(array){
+let arrayNumeros = [1, 2, 3, 5, 22, 6];
+if(arrayNumeros.length%2===0){
+let array1 = arrayNumeros.slice(0,3);
+let array2 = arrayNumeros.slice(3,6).reverse();
+let arrayFinal = [];
+
+for (let i=0; i < array1.length; i++){
+    console.log((array1[i] + array2[i])/2);
+    arrayFinal.push((array1[i] + array2[i]));
+}
+console.log(array1);
+console.log(array2);
+console.log(arrayFinal);
+}
+else{
+}
