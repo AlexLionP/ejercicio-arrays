@@ -129,8 +129,21 @@ Example:
 - For the array `[1,2,3,5,22,6]`, the result should be `[3.5, 12, 4]`.
 */
 console.log("Antipodal Average");
+const array = [1,2,3,4,5,22,6];
+function splitArray(array){
+    const half = array.length/2;
+    const arr1 = array.slice(0, half);
+    const arr2 = array.slice(half, array.length).reverse();
+    let res = [];
+    for(let i=0; i<arr1.length; i++){
+        res.push((arr1[i] + arr2[i])*.5);
+    }
+    console.log(res);
+}
+splitArray(array);
 //function splitArray(array){
-let arrayNumeros = [1, 2, 3, 5, 22, 6];
+
+/*let arrayNumeros = [1, 2, 3, 5, 22, 6];
 if(arrayNumeros.length%2===0){
 let array1 = arrayNumeros.slice(0,3);
 let array2 = arrayNumeros.slice(3,6).reverse();
@@ -146,3 +159,4 @@ console.log(arrayFinal);
 }
 else{
 }
+*/
